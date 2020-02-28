@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
+#include<iomanip>
 using namespace std;
 
 void randData(double *,int,int);
@@ -25,3 +26,43 @@ int main(){
 }
 
 //Write definition of randData(), showData() and findColSum()
+void randData(double *dPtr,int N,int M){
+	
+	for(int i=0; i<N*M ; i++){
+	
+			*(dPtr+i) = rand()%100 / 100.00;
+			
+			  
+		}
+	}
+
+
+
+
+void findColSum(const double *dPtr,double *result,int N,int M){
+	double sum =0;
+	int x=0,y=0;
+for(int i=0; i<N ; i++){
+	for(int j=0 ; j<M; j++){
+	sum += *(dPtr+j*7+i);
+	
+	}*(result+i) =sum;
+		sum =0;
+
+
+
+	
+	}
+
+}
+
+void showData(double *a,int N,int M){
+for(int i=0; i<(N*7) ; i+=7){
+		for(int j=0; j<M ; j++){
+			cout<<fixed<<setprecision(2);
+			cout << *(a+i+j) <<"  ";
+
+		}cout<<'\n';
+		
+}
+}
